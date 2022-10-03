@@ -1,0 +1,81 @@
+
+.pag-home{
+    background-image: url("fundo.png");
+}
+
+.sub-pag{
+    background-image: url("fundo2.png");
+}
+ header{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between  ;
+    padding: 20px;
+
+ }
+
+ .home-inf{
+    text-align: center;
+    padding: auto;
+    
+    
+   
+ }
+
+ .home-texto{
+    text-align: justify;
+    padding-left:120px;
+    padding-right: 120px;
+ }
+
+ .rodape{
+   text-align: center;
+   padding: 20px;
+   font-size: 22px;
+   font-weight: bold;
+ }
+
+ .quemsomos{
+   font-size: 35px;
+ }
+
+
+.motivos{
+   padding-bottom: 10px;
+   padding-top: 15px;
+   font-size: 30px;
+}
+   
+ .lista-motivos{
+   flex-direction: column;
+   line-height: 0.3;
+   font-size: 20px;
+   text-indent: 50px;
+
+ }
+
+
+ .texto{
+   text-align: justify;
+   font-size: 21px;
+ }
+
+ .linha{
+   padding-top: 30px ;
+   border-top: 0.1px solid gray; 
+   margin-bottom: 34px;
+   margin-top: 40px;
+   font-size: 33px;
+ }
+
+ .botao{
+   font-size: 15px;
+ }
+
+ .input-inf-contato{
+  border-top: 0.1px solid gray;
+  font-size: 21px;
+  padding-top: 15px;
+  
+ }
