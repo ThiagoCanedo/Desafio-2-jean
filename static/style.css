@@ -20,7 +20,6 @@
     padding: auto;
     
     
-   
  }
 
  .home-texto{
@@ -35,9 +34,14 @@
    font-size: 22px;
    font-weight: bold;
  }
+.texto-central{
+
+}
 
  .quemsomos{
    font-size: 35px;
+   margin-top: 5px;
+   
  }
 
 
