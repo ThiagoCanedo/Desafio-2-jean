@@ -21,13 +21,9 @@ class Reporter(db.Model):
     email= db.Column(db.String(100), unique=True, nullable=False)
     assunto=db.Column(db.String(300), nullable=False)
     descricao=db.Column(db.String(500), nullable=False)
-
     def __repr__(self):
         return f'<Reporter {self.email}>'
     
-
-
-
 
 
 @app.route("/")
@@ -43,14 +39,10 @@ def quemsomos():
 def contato():
     if request.method =='POST':
         email=request.form['email']
-        
         assunto=request.form['assunto']
         descricao=request.form['descricao']
         p=Reporter(email=email, assunto=assunto, descricao=descricao)
-        print('===========================================================================================================')
-        print(p)
-        
-        print(db.session.add(Reporter(email=email, assunto=assunto, descricao=descricao)))
+        db.session.add(Reporter(email=email, assunto=assunto, descricao=descricao))
         db.session.commit()
         # return redirect(url_for('base.html'))
 
