@@ -38,7 +38,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="D:\Desafio Jean\Desafio-2-jean\venv"
+VIRTUAL_ENV="D:\Fatec\Desafio Jean\Desafio-2-jean\venv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
