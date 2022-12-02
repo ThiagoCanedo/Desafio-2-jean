@@ -1,17 +1,20 @@
-from flask import render_template, url_for, request
-from app import app
-from db import mysql
+from flask import render_template, url_for, request, Blueprint
 
-@app.route("/")
+from db import mysql
+end=Blueprint('routes',__name__)
+
+
+
+@end.route("/")
 def index():
     return render_template ('index.html')
     
-@app.route("/quemsomos")
-@app.route("/templates/quemsomos.html")
+@end.route("/quemsomos")
+@end.route("/templates/quemsomos.html")
 def quemsomos():
     return render_template('quemsomos.html')
 
-@app.route("/contato", methods=('GET', 'POST'))
+@end.route("/contato", methods=('GET', 'POST'))
 def contato():
     if request.method =='POST':
         email=request.form['email']
@@ -24,13 +27,14 @@ def contato():
         return 'sucesso'
     return render_template('contato.html')
 
-@app.route('/users')
+@end.route('/users')
 def users():
     cur=mysql.connection.cursor()
     users=cur.execute('SELECT * FROM contatos')
+    userDetails=0
     if users>0:
         userDetails=cur.fetchall()
-        return render_template("users.html",userDetails=userDetails)
+    return render_template("users.html",userDetails=userDetails)
 
 
 

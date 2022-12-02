@@ -2,16 +2,17 @@
 from flask import Flask, render_template, request, url_for, redirect
 from flask_mysqldb import MySQL
 # from flask_bootstrap import Bootstrap
-from db import mysql, app
+from routes import end
+from db import mysql
 
 
+app=Flask("__name__")
 
 
-
-def creat_app():
-    from app import routes
-    routes.init_app(app)
-    return app
+# def creat_app():
+#     from app import route
+#     route.init_app(app)
+#     return app
 
 # Bootstrap(app)
 
@@ -20,6 +21,9 @@ app.config['MYSQL_USER']='root'
 app.config['MYSQL_PASSOWORD']=''
 app.config['MYSQL_DB']='contatos'
 
+mysql.init_app(app)
 
+app.register_blueprint(end)
 
-app.run()
+if __name__=='__main__':
+    app.run()
